@@ -13,6 +13,8 @@
 - [x] Add a general inquiry CTA with a non-clinical WhatsApp contact path and a sensitive-information warning.
 - [x] Use dark olive green, white and cream-white with refined editorial typography, subtle 3D interface depth and non-cannabis botanical leaf motifs.
 - [x] Implement a green floating cursor interaction with an accessible fallback and respect for reduced-motion preferences.
+- [x] Make the homepage begin with a clear welcome to Medical Mary education; move the “Would you like to be part of the Medical Mary family?” invitation into the email signup area.
+- [x] Add subtle medical-science glassware, test-tube and slide motifs, floating interface placeholders, a soft orb glow and restrained pointer-responsive 3D depth.
 - [x] Add the required `manus-routes.json` route manifest.
 - [x] Configure HTML/CSS diagnostics and confirm they are registered.
 - [x] Start the preview server and verify the root page at desktop and mobile sizes.

@@ -34,6 +34,19 @@ if (window.matchMedia('(pointer: fine)').matches && !reducedMotion) {
     element.addEventListener('mouseenter', () => body.classList.add('cursor-hover'));
     element.addEventListener('mouseleave', () => body.classList.remove('cursor-hover'));
   });
+
+  const heroArt = document.querySelector('.hero-art');
+  heroArt.addEventListener('pointermove', (event) => {
+    const bounds = heroArt.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    heroArt.style.setProperty('--tilt-x', `${(y * -4).toFixed(2)}deg`);
+    heroArt.style.setProperty('--tilt-y', `${(x * 4).toFixed(2)}deg`);
+  });
+  heroArt.addEventListener('pointerleave', () => {
+    heroArt.style.setProperty('--tilt-x', '0deg');
+    heroArt.style.setProperty('--tilt-y', '0deg');
+  });
 }
 
 const form = document.querySelector('#circle-form');
