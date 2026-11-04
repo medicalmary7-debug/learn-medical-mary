@@ -1,0 +1,75 @@
+const body = document.body;
+const orb = document.querySelector('.cursor-orb');
+const dot = document.querySelector('.cursor-dot');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (window.matchMedia('(pointer: fine)').matches && !reducedMotion) {
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let orbX = mouseX;
+  let orbY = mouseY;
+  let dotX = mouseX;
+  let dotY = mouseY;
+
+  window.addEventListener('pointermove', (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+    body.classList.add('cursor-ready');
+  }, { passive: true });
+
+  const follow = () => {
+    dotX += (mouseX - dotX) * 0.42;
+    dotY += (mouseY - dotY) * 0.42;
+    orbX += (mouseX - orbX) * 0.16;
+    orbY += (mouseY - orbY) * 0.16;
+    dot.style.left = `${dotX}px`;
+    dot.style.top = `${dotY}px`;
+    orb.style.left = `${orbX}px`;
+    orb.style.top = `${orbY}px`;
+    requestAnimationFrame(follow);
+  };
+  follow();
+
+  document.querySelectorAll('a, button, input, label').forEach((element) => {
+    element.addEventListener('mouseenter', () => body.classList.add('cursor-hover'));
+    element.addEventListener('mouseleave', () => body.classList.remove('cursor-hover'));
+  });
+}
+
+const form = document.querySelector('#circle-form');
+const status = document.querySelector('#form-status');
+const email = document.querySelector('#email');
+const consent = document.querySelector('#consent');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  status.textContent = '';
+
+  if (!email.value || !email.checkValidity()) {
+    status.textContent = 'Please enter a valid email address.';
+    email.focus();
+    return;
+  }
+  if (!consent.checked) {
+    status.textContent = 'Please confirm the educational email consent box.';
+    consent.focus();
+    return;
+  }
+
+  status.textContent = 'Thank you. The Circle invitation is being prepared — no details were transmitted from this preview.';
+  form.reset();
+});
+
+const revealItems = document.querySelectorAll('.section-shell:not(.hero) .section-label, .section-shell:not(.hero) .intro-grid, .section-shell:not(.hero) .principles, .section-shell:not(.hero) .topics-heading, .section-shell:not(.hero) .topic-list, .section-shell:not(.hero) .journal-heading, .section-shell:not(.hero) .journal-grid, .section-shell:not(.hero) .circle-panel, .section-shell:not(.hero) .contact-grid');
+
+if ('IntersectionObserver' in window && !reducedMotion) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealItems.forEach((item) => observer.observe(item));
+}
