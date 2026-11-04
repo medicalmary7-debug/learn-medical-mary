@@ -164,6 +164,9 @@ h2 { font-size: clamp(40px, 5vw, 70px); max-width: 680px; margin-bottom: 0; }
 .journal-meta { display: flex; justify-content: space-between; color: var(--olive-700); margin-bottom: 18px; }
 .journal-card h3 { font-family: var(--serif); font-size: 24px; line-height: 1.12; font-weight: 500; margin-bottom: 12px; }
 .journal-card p { color: var(--muted); font-size: 14px; max-width: 300px; }
+.journal-points { list-style: none; padding: 0; margin: 20px 0 0; max-width: 330px; border-top: 1px solid var(--line); }
+.journal-points li { position: relative; padding: 11px 0 11px 18px; border-bottom: 1px solid var(--line); color: var(--olive-700); font-size: 12px; line-height: 1.35; }
+.journal-points li::before { content: '•'; position: absolute; left: 0; color: var(--accent); }
 
 .circle { background: var(--cream); padding-top: 30px; padding-bottom: 30px; }
 .circle-panel { background: var(--olive-900); color: var(--cream); min-height: 600px; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
@@ -181,6 +184,12 @@ h2 { font-size: clamp(40px, 5vw, 70px); max-width: 680px; margin-bottom: 0; }
 .signup-invite em { color: var(--cream); }
 .signup-wrap { display: flex; flex-direction: column; justify-content: center; }
 .signup-form { max-width: 520px; width: 100%; }
+.form-note-intro { margin: -16px 0 18px; color: var(--sage); font-size: 13px; }
+.tally-launch-card { padding: 26px; border: 1px solid rgba(246, 242, 233, .2); background: linear-gradient(145deg, rgba(246, 242, 233, .08), rgba(110, 148, 111, .08)); box-shadow: inset 0 1px 0 rgba(246, 242, 233, .08), 0 18px 40px rgba(5, 18, 10, .12); }
+.tally-launch-label { display: block; color: var(--accent-bright); font-family: var(--mono); font-size: 10px; letter-spacing: .1em; margin-bottom: 28px; }
+.tally-launch-card p { max-width: 330px; color: var(--sage); font-size: 15px; margin-bottom: 24px; }
+.tally-launch { min-height: 48px; }
+.form-note a { color: var(--accent-bright); text-decoration: underline; text-underline-offset: 4px; }
 .signup-form > label:first-child { display: block; font-family: var(--serif); font-size: 28px; margin-bottom: 18px; }
 .input-row { display: flex; border-bottom: 1px solid rgba(246, 242, 233, .5); padding-bottom: 12px; gap: 14px; }
 .input-row input { min-width: 0; flex: 1; background: transparent; border: 0; outline: none; color: var(--cream); font-size: 16px; }

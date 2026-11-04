@@ -7,9 +7,10 @@
 - [x] Build accessible desktop, tablet and mobile layouts with semantic structure, keyboard-friendly controls, visible focus states and a visible fallback for the cursor interaction.
 - [x] Add education sections covering terpene science, evidence literacy, quality/lab testing and holistic routines without dosage advice, treatment claims, cures, symptom-relief promises, disease outcomes or guaranteed results.
 - [x] Add a concise journal preview that does not promote or link to a product catalogue, prices, stock or purchase flow.
-- [x] Add a visually implemented Medical Mary Circle email signup form with separate explicit email-marketing consent language.
-- [x] Keep signup submission disabled from transmission/storage until a privacy-reviewed provider and final consent wording are approved; the preview only validates the interface.
+- [x] Add the Medical Mary Circle Tally signup link at `https://tally.so/r/xVrGMk` with a visible secure-form CTA and privacy warning.
+- [x] Move email consent and submission handling to the Tally form rather than storing submissions in the website.
 - [x] Add a prominent privacy/scope statement that instructs visitors not to submit medical histories, symptoms, diagnoses, prescriptions, ID numbers, payment details or other health data.
+- [x] Replace teaser placeholders with short, claim-free explanations and three practical points each for Terpenes 101, quality checking and slower wellness routines.
 - [x] Add a general inquiry CTA with a non-clinical WhatsApp contact path and a sensitive-information warning.
 - [x] Use dark olive green, white and cream-white with refined editorial typography, subtle 3D interface depth and non-cannabis botanical leaf motifs.
 - [x] Implement a green floating cursor interaction with an accessible fallback and respect for reduced-motion preferences.
@@ -21,8 +22,7 @@
 
 ## Remaining before public launch
 
-- [ ] Select and review the email provider, data-processing terms, retention rules, unsubscribe flow and final POPIA consent language.
-- [ ] Connect the approved email provider to the form without storing submissions in the website database.
+- [ ] Confirm Tally’s submission destination, email-provider connection, data-processing terms, retention rules, unsubscribe flow and final POPIA consent language.
 - [ ] Decide whether to use the new project’s managed repository or a separately authorized GitHub repository; do not overwrite `medicalmary7-debug/Marry` without an explicit repository decision.
 - [ ] Confirm final domain placement: `medicalmary.co.za/learn/` or `learn.medicalmary.co.za`.
 - [ ] Save and publish only after the email, domain and content reviews are complete.

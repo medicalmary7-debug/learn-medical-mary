@@ -49,30 +49,6 @@ if (window.matchMedia('(pointer: fine)').matches && !reducedMotion) {
   });
 }
 
-const form = document.querySelector('#circle-form');
-const status = document.querySelector('#form-status');
-const email = document.querySelector('#email');
-const consent = document.querySelector('#consent');
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  status.textContent = '';
-
-  if (!email.value || !email.checkValidity()) {
-    status.textContent = 'Please enter a valid email address.';
-    email.focus();
-    return;
-  }
-  if (!consent.checked) {
-    status.textContent = 'Please confirm the educational email consent box.';
-    consent.focus();
-    return;
-  }
-
-  status.textContent = 'Thank you. The Circle invitation is being prepared — no details were transmitted from this preview.';
-  form.reset();
-});
-
 const revealItems = document.querySelectorAll('.section-shell:not(.hero) .section-label, .section-shell:not(.hero) .intro-grid, .section-shell:not(.hero) .principles, .section-shell:not(.hero) .topics-heading, .section-shell:not(.hero) .topic-list, .section-shell:not(.hero) .journal-heading, .section-shell:not(.hero) .journal-grid, .section-shell:not(.hero) .circle-panel, .section-shell:not(.hero) .contact-grid');
 
 if ('IntersectionObserver' in window && !reducedMotion) {
